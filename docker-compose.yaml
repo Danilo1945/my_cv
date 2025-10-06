@@ -1,0 +1,9 @@
+services:
+  cv-app:
+    build: .
+    container_name: dmoya.dnns.net
+    ports:
+      - "7525:5000"
+    volumes:
+      - ./data:/app/data
+      - .:/app

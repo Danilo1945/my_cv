@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Julio Danilo Moya Caisa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            font-size: 14px;
+            color: #343a40;
+        }
+        .skill-tag {
+            background-color: #e0f7fa;
+            color: #0d5c63;
+            padding: 4px 12px;
+            border-radius: 16px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            display: inline-block;
+            margin: 4px;
+            transition: all 0.2s ease;
+        }
+        .skill-tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .card {
+            background-color: white;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 4px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #22a2b3;
+            border: 3px solid #e0f7fa;
+            transition: all 0.2s ease;
+        }
+        .timeline-item:hover::before {
+            transform: scale(1.2);
+            background-color: #0d5c63;
+        }
+        .header-card {
+            background: linear-gradient(135deg, #0d5c63, #22a2b3);
+            color: white;
+        }
+
+        @media print {
+            body {
+                background-color: white;
+                font-size: 9pt;
+            }
+            .max-w-6xl {
+                max-width: 100%;
+                padding: 0;
+                margin: 0;
+            }
+            .grid {
+                display: grid;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 1rem;
+            }
+            .lg\:col-span-1 {
+                grid-column: span 1 / span 1;
+            }
+            .lg\:col-span-2 {
+                grid-column: span 2 / span 2;
+            }
+            .card {
+                box-shadow: none;
+                border: 1px solid #e5e7eb;
+                margin-bottom: 10px;
+                padding: 10px;
+                page-break-inside: avoid;
+            }
+            .header-card {
+                background: #f3f4f6;
+                color: #1f2937;
+                border-radius: 0;
+                border-bottom: 2px solid #d1d5db;
+            }
+            .header-card h1 {
+                color: #111827;
+            }
+            .header-card h2 {
+                color: #0d5c63;
+            }
+            .header-card a {
+                color: #0d5c63;
+            }
+            a[href="/download"] {
+                display: none;
+            }
+            .skill-tag {
+                padding: 2px 6px;
+                font-size: 0.7rem;
+            }
+            h3 {
+                color: #0d5c63;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <div class="max-w-6xl mx-auto p-4 sm:p-6 lg:p-8">
+        <!-- Contenedor Principal -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+            <!-- Columna Izquierda (Perfil y Habilidades) -->
+            <aside class="lg:col-span-1 space-y-6">
+                <!-- Tarjeta de Perfil -->
+                <header class="card text-center header-card">
+                    <div class="flex justify-center mb-4">
+                        <img src="{{ 'file:///app/data/MIFotoPerfil.jpg' if for_pdf else '/data/MIFotoPerfil.jpg' }}" alt="Foto de Perfil" class="w-32 h-32 rounded-full object-cover border-4 border-white/50">
+                    </div>
+                    <h1 class="text-2xl font-bold text-white">Julio Danilo Moya Caisa</h1>
+                    <h2 class="text-base font-medium text-cyan-200 mt-1">Ingeniero en Informática | Odoo Developer & Data Scientist</h2>
+                    <div class="mt-6 text-left space-y-3 text-cyan-100">
+                        <a href="mailto:danilomoya19@ymail.com" class="flex items-center hover:text-white transition-colors">
+                            <i data-lucide="mail" class="w-4 h-4 mr-3"></i>
+                            danilomoya19@ymail.com
+                        </a>
+                        <a href="tel:+593997672064" class="flex items-center hover:text-white transition-colors">
+                            <i data-lucide="phone" class="w-4 h-4 mr-3"></i>
+                            (+593) 997-672-064
+                        </a>
+                        <div class="flex items-center">
+                            <i data-lucide="map-pin" class="w-4 h-4 mr-3"></i>
+                            Quito, Pichincha, Ecuador
+                        </div>
+                    </div>
+
+                </header>
+
+                <!-- Tarjeta de Perfil Profesional -->
+                <div class="card">
+                    <h3 class="text-lg font-semibold border-b pb-2 mb-4 flex items-center"><i data-lucide="user-round" class="w-5 h-5 mr-3 text-teal-600"></i>Perfil Profesional</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Ingeniero en Informática y candidato a Máster en Ciencia de Datos con más de 5 años de experiencia en el ciclo completo de desarrollo. Especializado como Product Owner y Desarrollador Odoo, con dominio en Python y PostgreSQL. Experto en APIs REST, apps móviles con Flutter y despliegue en la nube con Docker. Apasionado por aplicar IA para automatizar y optimizar procesos.
+                    </p>
+                </div>
+                
+                <!-- Tarjeta de Habilidades Técnicas -->
+                <div class="card">
+                    <h3 class="text-lg font-semibold border-b pb-2 mb-4 flex items-center"><i data-lucide="cpu" class="w-5 h-5 mr-3 text-teal-600"></i>Habilidades Técnicas</h3>
+                    <div class="space-y-3">
+                        <div>
+                            <h4 class="font-semibold text-sm mb-2 text-gray-700">Backend & Odoo</h4>
+                            <div class="flex flex-wrap">
+                                <span class="skill-tag">Python</span><span class="skill-tag">Django</span><span class="skill-tag">Odoo</span><span class="skill-tag">API REST</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-sm mb-2 text-gray-700">Bases de Datos</h4>
+                            <div class="flex flex-wrap">
+                                <span class="skill-tag">PostgreSQL</span><span class="skill-tag">MySQL</span><span class="skill-tag">SQLite</span>
+                            </div>
+                        </div>
+                         <div>
+                            <h4 class="font-semibold text-sm mb-2 text-gray-700">Frontend & Móvil</h4>
+                            <div class="flex flex-wrap">
+                                <span class="skill-tag">JavaScript</span><span class="skill-tag">Flutter</span><span class="skill-tag">Dart</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-sm mb-2 text-gray-700">Data Science & IA</h4>
+                             <div class="flex flex-wrap">
+                                <span class="skill-tag">TensorFlow</span><span class="skill-tag">Keras</span><span class="skill-tag">Minería de Datos</span><span class="skill-tag">Web Scraping</span><span class="skill-tag">n8n</span><span class="skill-tag">Modelos LLM</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-sm mb-2 text-gray-700">DevOps & Cloud</h4>
+                             <div class="flex flex-wrap">
+                                <span class="skill-tag">Docker</span><span class="skill-tag">NGINX</span><span class="skill-tag">AWS Lightsail</span><span class="skill-tag">Oracle Cloud</span><span class="skill-tag">Google Cloud</span><span class="skill-tag">Hetzner Cloud</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta de Certificaciones -->
+                <div class="card">
+                     <h3 class="text-lg font-semibold border-b pb-2 mb-4 flex items-center"><i data-lucide="award" class="w-5 h-5 mr-3 text-teal-600"></i>Certificaciones</h3>
+                     <ul class="space-y-3 text-sm text-gray-600">
+                        <li class="flex items-start"><i data-lucide="star" class="w-3.5 h-3.5 mr-3 mt-1 text-amber-500 flex-shrink-0"></i><div><strong>Scrum Product Owner (SPOPC)</strong><span class="block text-xs text-gray-500">Certiprof</span></div></li>
+                        <li class="flex items-start"><i data-lucide="star" class="w-3.5 h-3.5 mr-3 mt-1 text-amber-500 flex-shrink-0"></i><div><strong>PCAP: Programming Essentials in Python</strong><span class="block text-xs text-gray-500">Open EDG Python Institute</span></div></li>
+                        <li class="flex items-start"><i data-lucide="star" class="w-3.5 h-3.5 mr-3 mt-1 text-amber-500 flex-shrink-0"></i><div><strong>Odoo, Docker & NGINX en AWS</strong><span class="block text-xs text-gray-500">BigOdoo</span></div></li>
+                        <li class="flex items-start"><i data-lucide="star" class="w-3.5 h-3.5 mr-3 mt-1 text-amber-500 flex-shrink-0"></i><div><strong>Cloud Computing</strong><span class="block text-xs text-gray-500">Escuela de Org. Industrial de España</span></div></li>
+                     </ul>
+                </div>
+            </aside>
+
+            <!-- Columna Derecha (Experiencia y Educación) -->
+            <main class="lg:col-span-2 space-y-6">
+                 <!-- Tarjeta de Experiencia Laboral -->
+                <div class="card">
+                     <h3 class="text-lg font-semibold border-b pb-2 mb-6 flex items-center"><i data-lucide="briefcase" class="w-5 h-5 mr-3 text-teal-600"></i>Experiencia Laboral</h3>
+                     <div class="relative pl-6 border-l-4 border-gray-200 space-y-8">
+                        <!-- Item 1 -->
+                        <div class="timeline-item">
+                            <p class="text-xs font-semibold uppercase text-gray-500">Diciembre 2022 - Presente</p>
+                            <h4 class="font-bold text-base mt-1">Product Owner & Full-Stack Developer</h4>
+                            <p class="font-medium text-teal-600">Open Source Solutions Open2S S.A.</p>
+                            <ul class="list-disc pl-5 mt-2 text-sm text-gray-600 space-y-2">
+                                <li>Lidero el desarrollo y personalización de módulos Odoo (RRHH, contabilidad, finanzas, inventario, CRM) para sectores como servicios petroleros, ingeniería genética y seguridad privada.</li>
+                                <li>He integrado Odoo con sistemas ERP como Oracle NetSuite y plataformas logísticas, además de desarrollar chatbots para CRM vía API REST de WhatsApp.</li>
+                                <li>Creo aplicaciones móviles multiplataforma con Flutter y Dart para operaciones offline (cobranzas, toma de pedidos, fuerza de ventas) sincronizadas con Odoo.</li>
+                                <li>Diseñé e implementé soluciones de automatización con web scraping y n8n, potenciadas con modelos de IA para optimizar flujos de trabajo.</li>
+                                <li>Optimicé los tiempos de desarrollo en un 40% y el procesamiento de datos en un 45% mediante el uso de IA y técnicas de minería de datos.</li>
+                                <li>Administro el despliegue y mantenimiento de aplicaciones en la nube (AWS, Google Cloud, Oracle Cloud, Hetzner) utilizando Docker y NGINX.</li>
+                            </ul>
+                        </div>
+                        <!-- Item Nuevo -->
+                        <div class="timeline-item">
+                             <p class="text-xs font-semibold uppercase text-gray-500">Abril 2023 (40 horas)</p>
+                             <h4 class="font-bold text-base mt-1">Instructor de Curso: Programación con Django</h4>
+                             <p class="font-medium text-teal-600">Universidad Regional Autónoma de los Andes</p>
+                             <ul class="list-disc pl-5 mt-2 text-sm text-gray-600 space-y-2">
+                                <li>Diseñé e impartí un curso intensivo de 40 horas sobre desarrollo web avanzado con Django, dirigido al cuerpo docente de la carrera de sistemas.</li>
+                             </ul>
+                        </div>
+                        <!-- Item 2 -->
+                        <div class="timeline-item">
+                             <p class="text-xs font-semibold uppercase text-gray-500">Noviembre 2020 - Diciembre 2022</p>
+                             <h4 class="font-bold text-base mt-1">Desarrollador de Software</h4>
+                             <p class="font-medium text-teal-600">Proyecto REDEC - Universidad Técnica de Cotopaxi</p>
+                             <ul class="list-disc pl-5 mt-2 text-sm text-gray-600 space-y-2">
+                                <li>Desarrollé el frontend y backend del "Sistema Recomendador de Procesos de Investigación" para la plataforma científica ECUCIENCIA.</li>
+                                <li>Implementé modelos de IA con Redes Neuronales usando Python, Django, TensorFlow y Keras.</li>
+                             </ul>
+                        </div>
+                        <!-- Item 3 -->
+                        <div class="timeline-item">
+                             <p class="text-xs font-semibold uppercase text-gray-500">Mayo 2019 - Noviembre 2020</p>
+                             <h4 class="font-bold text-base mt-1">Desarrollador de Software (Prácticas)</h4>
+                             <p class="font-medium text-teal-600">Asociación de Productores de Quinticusig-Sigchos</p>
+                             <ul class="list-disc pl-5 mt-2 text-sm text-gray-600 space-y-2">
+                                 <li>Desarrollé la aplicación web de la institución utilizando el framework CakePHP y MySQL para la gestión de sus operaciones.</li>
+                             </ul>
+                        </div>
+                     </div>
+                </div>
+                
+                 <!-- Tarjeta de Formación Académica -->
+                <div class="card">
+                     <h3 class="text-lg font-semibold border-b pb-2 mb-6 flex items-center"><i data-lucide="graduation-cap" class="w-5 h-5 mr-3 text-teal-600"></i>Formación Académica</h3>
+                      <div class="relative pl-6 border-l-4 border-gray-200 space-y-6">
+                        <div class="timeline-item">
+                            <h4 class="font-bold">Máster en Ciencia de Datos</h4>
+                            <p class="font-medium text-sm text-gray-600">Universidad Internacional Iberoamericana (UNINI-MX)</p>
+                            <p class="text-xs text-gray-500">En curso</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4 class="font-bold">Ingeniero en Informática y Sistemas</h4>
+                            <p class="font-medium text-sm text-gray-600">Universidad Técnica de Cotopaxi</p>
+                        </div>
+                         <div class="timeline-item">
+                            <h4 class="font-bold">Técnico en Producción Agropecuaria</h4>
+                            <p class="font-medium text-sm text-gray-600">U.E. a Distancia "Monseñor Leonidas Proaño"</p>
+                        </div>
+                      </div>
+                </div>
+
+                <!-- Tarjeta de Publicaciones y Ponencias -->
+                <div class="card">
+                    <h3 class="text-lg font-semibold border-b pb-2 mb-6 flex items-center"><i data-lucide="mic" class="w-5 h-5 mr-3 text-teal-600"></i>Publicaciones y Ponencias</h3>
+                    <div class="space-y-4">
+                        <div class="p-4 bg-gray-50 rounded-lg">
+                            <p class="font-semibold text-sm">"UN ENFOQUE DE MACHINE LEARNING EN EL DESARROLLO DE SISTEMAS RECOMENDADORES..."</p>
+                            <p class="text-xs text-gray-500 mt-1">Ponente en ICITS’20, Bogotá. Publicado en RISTI (Scopus).</p>
+                        </div>
+                         <div class="p-4 bg-gray-50 rounded-lg">
+                            <p class="font-semibold text-sm">"FACTORES DE ÉXITO PARA SISTEMAS RECOMENDADORES DE PROCESOS DE INVESTIGACIÓN"</p>
+                            <p class="text-xs text-gray-500 mt-1">Ponente en Seminario Internacional de Ciencias de la Ingeniería, Ibarra. Publicado en RISTI (Scopus).</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
