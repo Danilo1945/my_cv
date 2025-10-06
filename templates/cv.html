@@ -67,7 +67,7 @@
         @media print {
             body {
                 background-color: white;
-                font-size: 9pt;
+                font-size: 8pt;
             }
             .max-w-6xl {
                 max-width: 100%;
@@ -75,21 +75,17 @@
                 margin: 0;
             }
             .grid {
-                display: grid;
-                grid-template-columns: repeat(3, minmax(0, 1fr));
-                gap: 1rem;
+                display: block;
             }
-            .lg\:col-span-1 {
-                grid-column: span 1 / span 1;
-            }
-            .lg\:col-span-2 {
-                grid-column: span 2 / span 2;
+            .lg\:col-span-1, .lg\:col-span-2 {
+                display: block;
+                width: 100%;
             }
             .card {
                 box-shadow: none;
                 border: 1px solid #e5e7eb;
-                margin-bottom: 10px;
-                padding: 10px;
+                margin-bottom: 8px;
+                padding: 8px;
                 page-break-inside: avoid;
             }
             .header-card {
@@ -112,10 +108,14 @@
             }
             .skill-tag {
                 padding: 2px 6px;
-                font-size: 0.7rem;
+                font-size: 0.6rem;
             }
             h3 {
                 color: #0d5c63;
+            }
+            .profile-picture {
+                width: 8rem;
+                height: 8rem;
             }
         }
     </style>
@@ -131,10 +131,10 @@
                 <!-- Tarjeta de Perfil -->
                 <header class="card text-center header-card">
                     <div class="flex justify-center mb-4">
-                        <img src="{{ 'file:///app/data/MIFotoPerfil.jpg' if for_pdf else '/data/MIFotoPerfil.jpg' }}" alt="Foto de Perfil" class="w-32 h-32 rounded-full object-cover border-4 border-white/50">
+                        <img src="{{ 'file:///app/data/MIFotoPerfil.jpg' if for_pdf else '/data/MIFotoPerfil.jpg' }}" alt="Foto de Perfil" class="w-32 h-32 rounded-full object-cover border-4 border-white/50 profile-picture">
                     </div>
                     <h1 class="text-2xl font-bold text-white">Julio Danilo Moya Caisa</h1>
-                    <h2 class="text-base font-medium text-cyan-200 mt-1">Ingeniero en Informática | Odoo Developer & Data Scientist</h2>
+                    <h2 class="text-base font-medium text-cyan-200 mt-1">Ingeniero en Informática | Odoo,Flutter,Python Developer & Data Scientist</h2>
                     <div class="mt-6 text-left space-y-3 text-cyan-100">
                         <a href="mailto:danilomoya19@ymail.com" class="flex items-center hover:text-white transition-colors">
                             <i data-lucide="mail" class="w-4 h-4 mr-3"></i>
@@ -148,8 +148,17 @@
                             <i data-lucide="map-pin" class="w-4 h-4 mr-3"></i>
                             Quito, Pichincha, Ecuador
                         </div>
+                        <a href="https://github.com/Danilo1945" target="_blank" class="flex items-center hover:text-white transition-colors">
+                            <i data-lucide="github" class="w-4 h-4 mr-3"></i>
+                            github.com/Danilo1945
+                        </a>
                     </div>
-
+                    <div class="mt-6">
+                        <a href="/download" class="inline-flex items-center justify-center w-full px-4 py-2 border border-transparent text-sm font-medium rounded-md text-teal-700 bg-white hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500">
+                            <i data-lucide="download" class="w-4 h-4 mr-2"></i>
+                            Descargar CV en PDF
+                        </a>
+                    </div>
                 </header>
 
                 <!-- Tarjeta de Perfil Profesional -->
@@ -194,6 +203,12 @@
                                 <span class="skill-tag">Docker</span><span class="skill-tag">NGINX</span><span class="skill-tag">AWS Lightsail</span><span class="skill-tag">Oracle Cloud</span><span class="skill-tag">Google Cloud</span><span class="skill-tag">Hetzner Cloud</span>
                             </div>
                         </div>
+                        <div>
+                            <h4 class="font-semibold text-sm mb-2 text-gray-700">Metodologías Ágiles</h4>
+                             <div class="flex flex-wrap">
+                                <span class="skill-tag">Scrum</span><span class="skill-tag">Gestión de Proyectos Ágiles</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -205,6 +220,15 @@
                         <li class="flex items-start"><i data-lucide="star" class="w-3.5 h-3.5 mr-3 mt-1 text-amber-500 flex-shrink-0"></i><div><strong>PCAP: Programming Essentials in Python</strong><span class="block text-xs text-gray-500">Open EDG Python Institute</span></div></li>
                         <li class="flex items-start"><i data-lucide="star" class="w-3.5 h-3.5 mr-3 mt-1 text-amber-500 flex-shrink-0"></i><div><strong>Odoo, Docker & NGINX en AWS</strong><span class="block text-xs text-gray-500">BigOdoo</span></div></li>
                         <li class="flex items-start"><i data-lucide="star" class="w-3.5 h-3.5 mr-3 mt-1 text-amber-500 flex-shrink-0"></i><div><strong>Cloud Computing</strong><span class="block text-xs text-gray-500">Escuela de Org. Industrial de España</span></div></li>
+                        <li class="flex items-start"><i data-lucide="star" class="w-3.5 h-3.5 mr-3 mt-1 text-amber-500 flex-shrink-0"></i><div><strong>Desarrollo de Apps Móviles</strong><span class="block text-xs text-gray-500">Universidad Complutense de Madrid</span></div></li>
+                     </ul>
+                </div>
+
+                <!-- Tarjeta de Idiomas -->
+                <div class="card">
+                     <h3 class="text-lg font-semibold border-b pb-2 mb-4 flex items-center"><i data-lucide="languages" class="w-5 h-5 mr-3 text-teal-600"></i>Idiomas</h3>
+                     <ul class="space-y-3 text-sm text-gray-600">
+                        <li class="flex items-start"><i data-lucide="message-circle" class="w-3.5 h-3.5 mr-3 mt-1 text-teal-500 flex-shrink-0"></i><div><strong>Inglés</strong><span class="block text-xs text-gray-500">Nivel C.E.F.R - B1</span></div></li>
                      </ul>
                 </div>
             </aside>
